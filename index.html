@@ -15,6 +15,10 @@
         <script>
         var socket = io("ws://192.168.4.18:3000", { transports : ['websocket'] });
 
+        socket.on("connect", () => {
+            console.log(socket.id);
+        });
+
         socket.on('sensor', (temp, hum) => {
             console.log("temperatura " + temp);
             console.log("humedad " + hum);
