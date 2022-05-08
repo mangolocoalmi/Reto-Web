@@ -25,7 +25,7 @@ var opts = {
   },
   renderTicks: {
     divisions: 5,
-    divWidth: 1.1,
+    divWidth: 1,
     divLength: 0.7,
     divColor: '#333333',
     subDivisions: 3,

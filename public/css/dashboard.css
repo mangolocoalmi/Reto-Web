@@ -1,18 +1,17 @@
-div {
-    background: #c1c1c1;
-    text-align: center;
-    border: 1px solid black;
-}
 #txt, #txt1 {
     padding: 10px;
     margin: auto;
 }
-#txt { background: #d7a100;}
+#txt { background: #764AF1;}
 
-.te { background: #fdbd00;}
+.te { background: #9772FB;}
 
-#txt1 { background: #005dd7; }
+#txt1 { background: #247881; }
 
-.hu { background: #016efd; }
+.hu { background: #43919B; }
 
-.caja { height: 220px;}
+.caja { 
+    height: 220px;
+    text-align: center;
+    border: 3px solid black;
+}
