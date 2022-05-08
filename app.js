@@ -1,5 +1,4 @@
 const express = require("express");
-const puerto = 3000
 //const database = require('./config/database');
 const app = express();
 const http = require('http');
@@ -10,14 +9,21 @@ const io = require('socket.io')(server, {
     }
 });
 
-app.use(express.json());
+//Definimos la carpeta de contenido estático
+app.use(express.static('public'))
+
+//Necesario para parsear objetos JSON
+app.use(express.json())
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+    res.render('index.ejs', { page: 'Home', menuId: 'home' });
 });
 
-server.listen(puerto, () => {
-    console.log(`Server listo en http://localhost:${puerto}`);
-});
+app.set('view engine', 'ejs');
 
-module.exports = app;
+const rutas = require('./routes/rutas')
+app.use('/', rutas)
+
+server.listen(3000, () => {
+    console.log(`Server listo en *:${3000}`);
+});
