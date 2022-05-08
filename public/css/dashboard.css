@@ -1,0 +1,18 @@
+div {
+    background: #c1c1c1;
+    text-align: center;
+    border: 1px solid black;
+}
+#txt, #txt1 {
+    padding: 10px;
+    margin: auto;
+}
+#txt { background: #d7a100;}
+
+.te { background: #fdbd00;}
+
+#txt1 { background: #005dd7; }
+
+.hu { background: #016efd; }
+
+.caja { height: 220px;}

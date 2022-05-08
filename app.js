@@ -1,5 +1,5 @@
 const express = require("express");
-//const database = require('./config/database');
+const database = require('./config/database');
 const app = express();
 const http = require('http');
 const server = http.createServer(app);
@@ -9,6 +9,7 @@ const io = require('socket.io')(server, {
     }
 });
 
+database.conectarBD();
 //Definimos la carpeta de contenido estático
 app.use(express.static('public'))
 
@@ -16,7 +17,7 @@ app.use(express.static('public'))
 app.use(express.json())
 
 app.get('/', (req, res) => {
-    res.render('index.ejs', { page: 'Home', menuId: 'home' });
+    res.render('index.ejs', { page: 'Inicio', menuId: 'inicio' });
 });
 
 app.set('view engine', 'ejs');
