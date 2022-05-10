@@ -27,14 +27,14 @@ app.use(bodyParser.json());
 //Necesario para parsear objetos JSON
 app.use(express.json())
 
-app.get('/', (req, res) => {
-    res.render('index.ejs', { page: 'Inicio', menuId: 'inicio' });
-});
-
 app.set('view engine', 'ejs');
 
 const rutas = require('./routes/rutas')
+const auth = require('./routes/auth_rutas')
+
 app.use('/', rutas)
+app.use('/auth', auth)
+
 
 server.listen(3000, () => {
     console.log(`Server listo en *:${3000}`);

@@ -1,14 +1,21 @@
 const express = require('express')
 const router = express.Router()
 
-const usuario_controller = require('../controllers/userController')
+const index_controller = require('../controllers/indexController')
 
-router.get('/admin', usuario_controller.adminok)
+router.get("/", function (req, res) {
+    res.render("index.ejs", { menuId: "inicio" });
+});
 
-router.get('/registro', usuario_controller.registroWeb)
-    .post('/registro', usuario_controller.registro)
+router.get("/login", index_controller.loginWeb);
+router.get('/registro', index_controller.registroWeb)
+router.get("/admin", index_controller.adminok);
 
-router.get('/login', usuario_controller.loginWeb)
-    .post('/login', usuario_controller.login)        
+
+router.get('/logout', function (req, res) {
+    req.session.destroy();
+    res.send("logout success!");
+    res.redirect("/")
+})    
 
 module.exports = router
