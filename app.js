@@ -1,4 +1,6 @@
 const express = require("express");
+const bodyParser = require('body-parser');
+const session = require('express-session')
 const database = require('./config/database');
 const app = express();
 const http = require('http');
@@ -11,7 +13,16 @@ const io = require('socket.io')(server, {
 
 database.conectarBD();
 //Definimos la carpeta de contenido estático
+app.use(session({
+	secret: 'mangoloco',
+	resave: true,
+	saveUninitialized: true
+}));
 app.use(express.static('public'))
+app.use(bodyParser.urlencoded({
+    extended: true
+  }));
+app.use(bodyParser.json());
 
 //Necesario para parsear objetos JSON
 app.use(express.json())

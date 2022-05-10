@@ -1,10 +1,10 @@
-// var socket = io("ws://192.168.4.18:3000", { transports : ['websocket'] });
-var socket = io("ws://192.168.1.60:3000", { transports: ["websocket"], reconnection: false,});
+var socket = io("ws://192.168.4.18:3000", { transports : ['websocket'] });
+//var socket = io("ws://192.168.1.60:3000", { transports: ["websocket"], reconnection: false,});
 socket.on("connect", () => {
   console.log(socket.id);
 });
 
-var opts = {
+var opts_temp = {
   angle: 0, // The span of the gauge arc
   lineWidth: 0.24, // The line thickness
   radiusScale: 1, // Relative radius
@@ -40,11 +40,29 @@ var opts = {
   ],
 };
 
+var opts_hum = {
+  angle: 0.15, /// The span of the gauge arc
+  lineWidth: 0.44, // The line thickness
+  pointer: {
+    length: 0.62, // Relative to gauge radius
+    strokeWidth: 0.035 // The thickness
+  },
+  staticLabels: {
+    font: "10px sans-serif",  // Specifies font
+    labels: [0, 30, 50, 100],  // Print labels at these values
+    color: "#000000",  // Optional: Label text color
+    fractionDigits: 0  // Optional: Numerical precision. 0=round off.
+  },
+  colorStart: '#205375',   // Colors
+  colorStop: '#187498',    // just experiment with them
+  strokeColor: '#E8F9FD'   // to see which ones work best for you
+};
+
 var target = document.getElementById('temp');
 var target1 = document.getElementById('hum');
 
-var gauge = new Gauge(target).setOptions(opts);
-var gauge1 = new Gauge(target1).setOptions(opts);
+var gauge = new Gauge(target).setOptions(opts_temp);
+var gauge1 = new Gauge(target1).setOptions(opts_hum);
 
 gauge.maxValue = 100; // set max gauge value
 gauge.setMinValue(0);  // Prefer setter over gauge.minValue = 0
