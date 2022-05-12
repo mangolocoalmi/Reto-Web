@@ -5,16 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= menuId %></title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/login.css">
   </head>
 
   <body>
     <%- include('includes/menu') %>
-    <form action="/auth/registro" method="post">
-        <input type="text" name="email" placeholder="email">
-        <input type="text" name="username" placeholder="username">
-        <input type="password" name="password" placeholder="password">
-        <input type="submit" value="Registrarse">
-    </form>
+		<div class="login">
+			<h1>Registro</h1>
+			<form action="/auth/registro" method="post">
+				<label for="email">
+          <i class="fas fa-envelope"></i>
+				</label>
+				<input type="text" name="email" placeholder="Email" id="email" required>
+        <label for="username">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="username" placeholder="Username" id="username" required>
+				<label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="password" placeholder="Password" id="password" required>
+				<input type="submit" value="Registro">
+			</form>
+		</div>
+
   </body>
 </html>
