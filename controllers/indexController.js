@@ -7,12 +7,11 @@ exports.loginWeb = async (req, res) => {
 };
 
 exports.adminok = async (req, res) => {
-  console.log(req.session);
   if (typeof req.session !== "undefined") {
     if (req.session.loggedin) {
       res.render("dashboard", { user: req.session.username, menuId: "admin" });
     } else {
-      res.send("Please login to view this page!");
+      res.redirect('/');
     }
   }
   res.end();

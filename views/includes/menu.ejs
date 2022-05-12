@@ -5,8 +5,10 @@
     <nav class="nav">
         <ul class="menu">
             <li <% if (menuId === 'inicio') { %> class="active" <% } %> id="home"><a href="/">INICIO</a></li>
-            <li <% if (menuId === 'login') { %> class="active" <% } %> id="login"><a href="/login">LOGIN</a></li>
-            <li <% if (menuId === 'registro') { %> class="active" <% } %> id="registro"><a href="/registro">REGISTRO</a></li>
+            <% if(!user) { %>
+                <li <% if (menuId === 'login') { %> class="active" <% } %> id="login"><a href="/login">LOGIN</a></li>
+                <li <% if (menuId === 'registro') { %> class="active" <% } %> id="registro"><a href="/registro">REGISTRO</a></li>
+            <% } %>
             <% if(user) { %>
                 <li <% if (menuId === 'admin') { %> class="active" <% }  %> id="admin"><a href="/admin">DASHBOARD</a></li>
                 <li id="logout"><a href="/logout">CERRAR SESION</a></li>

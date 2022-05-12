@@ -4,10 +4,8 @@ const Usuario = require('../model/usuario')
 exports.registro = async (req, res) => {
   console.log(req.body);
  try {
-  // Get user input
   const { email, username, password } = req.body;
 
-  // Validate user input
   if (!(email && password && username)) {
     res.status(400).send("All input is required");
   }
@@ -37,7 +35,6 @@ exports.login = async (req, res) => {
   if (username && password) {
     const user = await Usuario.findOne({ username });
     if (user && (await bcrypt.compare(password, user.password))) {
-      console.log(req.session)
       req.session.loggedin = true;
 			req.session.username = username;
       res.redirect("/");

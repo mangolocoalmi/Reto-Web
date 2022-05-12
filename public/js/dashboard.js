@@ -1,4 +1,7 @@
-var socket = io("ws://192.168.4.18:3000", { transports : ['websocket'] });
+var socket = io("ws://192.168.4.18:3000", {
+  transports: ["websocket"],
+  reconnection: false,
+});
 //var socket = io("ws://192.168.1.60:3000", { transports: ["websocket"], reconnection: false,});
 socket.on("connect", () => {
   console.log(socket.id);
@@ -70,7 +73,17 @@ gauge.animationSpeed = 128; // set animation speed (32 is default value)
 
 gauge1.maxValue = 100; // set max gauge value
 gauge1.setMinValue(0);  // Prefer setter over gauge.minValue = 0
-gauge1.animationSpeed = 128; // set animation speed (32 is default value)
+gauge1.animationSpeed = 32; // set animation speed (32 is default value)
+
+document.getElementById("txt").innerText = 100 + "ºC";
+document.getElementById("txt1").innerText = 100 + "%";
+gauge.set(100);
+gauge1.set(100);
+setInterval(function () {}, 1000);
+document.getElementById("txt").innerText = 0 + "ºC";
+document.getElementById("txt1").innerText = 0 + "%";
+gauge.set(0);
+gauge1.set(0);
 
 socket.on("sensor", (temp, hum) => {
   document.getElementById('txt').innerText = temp + "ºC";
