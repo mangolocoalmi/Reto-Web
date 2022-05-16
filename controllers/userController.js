@@ -37,7 +37,7 @@ exports.login = async (req, res) => {
     if (user && (await bcrypt.compare(password, user.password))) {
       req.session.loggedin = true;
 			req.session.username = username;
-      res.redirect("/");
+      res.redirect("/admin");
     } else {
       res.status(400).send("Invalid Credentials")
     }

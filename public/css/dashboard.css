@@ -1,3 +1,9 @@
+.container {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+}
+
 #txt, #txt1 {
     padding: 10px;
     margin: auto;
@@ -9,6 +15,13 @@
 #txt1 { background: #247881; }
 
 .hu { background: #43919B; }
+
+#txt2 {
+    background: #b56b1c;
+}
+.ns {
+    background: #ec994b;
+}
 
 .caja { 
     height: 220px;

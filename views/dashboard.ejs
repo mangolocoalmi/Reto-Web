@@ -10,18 +10,24 @@
   </head>
   <body>
     <%- include('includes/menu')  %>
-    <div>
-      <div class="caja te">
-        <h1 id="txt">100ºc</h1>
-        <canvas id="temp"></canvas>
+    <div class="container">
+      <div class="row">
+        <div class="caja te">
+          <h1 id="txt">100ºc</h1>
+          <canvas id="temp"></canvas>
+        </div>
+        <div class="caja hu">
+          <h1 id="txt1">100%</h1>
+          <canvas id="hum"></canvas>
+        </div>
       </div>
-      <div class="caja hu">
-        <h1 id="txt1">100%</h1>
-        <canvas id="hum"></canvas>
+      <div>
+        <canvas id="grafica"></canva>
       </div>
     </div>
   </body>
   <script src="/socket.io/socket.io.js"></script>
   <script src="js/gauge.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
   <script src="js/dashboard.js"></script>
 </html>
