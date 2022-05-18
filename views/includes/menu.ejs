@@ -1,15 +1,13 @@
 <header class="header">
-    <a href="#" class="logo"><span>ML</span>
+    <a href="#" class="logo"><span>Mango Loco</span>
         <img src="/images/logo2.png" alt="" srcset=""></a>
     <input class="side-menu" type="checkbox" id="side-menu"/>
     <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
     <nav class="nav">
         <ul class="menu">
             <li <% if (menuId === 'admin') { %> class="active" <% } %> id="home"><a href="/admin">INICIO</a></li>
-            <% if(!user) { %>
-                <li <% if (menuId === 'login') { %> class="active" <% } %> id="login"><a href="/login">LOGIN</a></li>
-                <li <% if (menuId === 'registro') { %> class="active" <% } %> id="registro"><a href="/registro">REGISTRO</a></li>
-            <% } %>
+            <li <% if (menuId === 'registro') { %> class="active" <% } %> id="registro"><a href="/registro">REGISTRO</a></li>
+            <!-- <li <% if (menuId === 'login') { %> class="active" <% } %> id="login"><a href="/login">LOGIN</a></li> -->
             <% if(user) { %>
                 <li <% if (menuId === 'estadistica') { %> class="active" <% }  %> id="admin"><a href="/estadisticas">ESTADISTICAS</a></li>
                 <li id="logout"><a href="/logout">CERRAR SESION</a></li>

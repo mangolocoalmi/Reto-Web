@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1" />
     <title><%= menuId %></title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" />
-    <link rel="stylesheet" href="css/cosa.css" />
+    <link rel="stylesheet" href="css/login.css" />
   </head>
   <body>
 		<div class="container">
@@ -15,12 +15,10 @@
 			<div class="login">
 				<form action="/auth/login" method="post">
 					<div class="form-group">
-						<label class="icon"  for="username"><i class="fas fa-user"></i></label>
 						<input class="input-form" type="text" name="username" id="username" required>
 						<label for="username" class="form-label">Username</label>
 					</div>
 					<div class="form-group">
-						<label class="icon" for="password"><i class="fas fa-lock"></i></label>
 						<input class="input-form" type="password" name="password" id="password" required>
 						<label for="password" class="form-label">Contraseña</label>
 					</div>
@@ -28,19 +26,5 @@
 				</form>
 			</div>
 		</div>
-    <!-- <div class="login">
-			<h1>Login</h1>
-			<form action="/auth/login" method="post">
-				<label for="username">
-					<i class="fas fa-user"></i>
-				</label>
-				<input type="text" name="username" placeholder="Username" id="username" required>
-				<label for="password">
-					<i class="fas fa-lock"></i>
-				</label>
-				<input type="password" name="password" placeholder="Password" id="password" required>
-				<input type="submit" value="Login">
-			</form>
-		</div> -->
   </body>
 </html>

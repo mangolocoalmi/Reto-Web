@@ -1,58 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Josefin+Sans&family=Lato&family=Maven+Pro:wght@700&family=Roboto:wght@500&display=swap');
+
+:root {
+    --color-txt: #D2D9DC;
+}
+
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
-    font-size: 16px;
 }
+
 body {
-    background-color: #435165;
+    color: #fff;
+    font-family: Josefin sans;
+    background: #526472;
+    background-image: url("https://pivigames.blog/wp-content/uploads/2020/04/game_pattern.png");
+    background-position: center center;
+    background-size: auto;
+    background-repeat: repeat;
+    background-attachment: scroll;
 }
-.login {
-    width: 400px;
-    background-color: #ffffff;
-    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
-    margin: 100px auto;
+
+.container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    height: 100vh;
 }
-.login h1 {
+
+.header {
     text-align: center;
-    color: #5b6574;
-    font-size: 24px;
-    padding: 20px 0 20px 0;
-    border-bottom: 1px solid #dee0e4;
+    margin: 4em 0;
+    font-size: 1.2rem;
 }
+
+.header h1 {
+    color: var(--color-txt);
+}
+
+.login {
+    width: 400px;   
+    margin-top: 75px;
+    height: auto;
+    background: #f9f9f9;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
 .login form {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-top: 20px;
+    padding: 20px 20px;
+    margin: 10px;
+    /* padding: 10px 15px; */
 }
-.login form label {
+.form-group {
+    position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    background-color: #3274d6;
-    color: #ffffff;
+    flex-flow: column;
+    margin-bottom: 40px;
+    text-align: left;
 }
-.login form input[type="password"], .login form input[type="text"] {
-    width: 310px;
-    height: 50px;
-    border: 1px solid #dee0e4;
-    margin-bottom: 20px;
-    padding: 0 15px;
+
+.icon {
+    position: absolute;
+    left: 5px;
+    top: 20px;
+    font-size: 1.7rem;
 }
-.login form input[type="submit"] {
-    width: 100%;
-    padding: 15px;
-   margin-top: 20px;
-    background-color: #3274d6;
-    border: 0;
-    cursor: pointer;
+
+.form-label {
+    font-size: 1rem;
+    color: #6C6C6C;
     font-weight: bold;
-    color: #ffffff;
-    transition: background-color 0.2s;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 36%;
+    left: 3%;
+    font-family: Maven pro;
+    transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.15s;
 }
-.login form input[type="submit"]:hover {
-  background-color: #2868c7;
-    transition: background-color 0.2s;
+
+.input-form {
+    outline: none;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    background-color: #ededed;
+    padding: 1.3rem 1rem 0.6rem 1rem;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.input-form:focus {
+    background: #f9f9f9;
+    color: #333;
+    border: 2px solid #121212;
+}
+.input-form:focus + label,
+.input-form:valid + label {
+    top: 2px;
+}
+
+.btn {
+    width: 50%;
+    padding: 15px;
+    border-radius: 4px;
+    border: 2px solid transparent;
+    background: #d13639;
+    color: #f9f9f9;
+    font-family: josefin sans;
+    font-size: 1.5rem;
+    margin: 10px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: #bc252a;
+    color: white;
 }
