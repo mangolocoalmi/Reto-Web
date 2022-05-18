@@ -11,7 +11,9 @@
 	box-sizing: border-box;
 }
 
-
+.active {
+    color: #1369ca;
+}
 body{
     background-color: var(--white);
     font-family: "Poppins", sans-serif;

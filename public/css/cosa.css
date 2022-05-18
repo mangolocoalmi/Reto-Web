@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Lato:300&display=swap');
+
+:root {
+    --color-bg: #3C1053FF;
+    --color-txt: #FF2B6B;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,26 +13,46 @@
 
 body {
     color: #fff;
-    background: #2c3338;
-    font-family: 'Roboto', sans-serif;
+    font-family: Josefin sans;
+    background: var(--color-bg);
 }
 
 .container {
     display: flex;
+    flex-flow: column;
+    align-items: center;
     height: 100vh;
-    justify-content: center;
 }
 
-.input-form {
+.header {
+    text-align: center;
+    margin: 4em 0;
+    font-size: 1.2rem;
+}
+
+.header h1 {
+    color: var(--color-txt);
+}
+
+.login {
+    width: 400px;   
+    /* background-color: #ffffff; */
+    box-shadow: 0 0 9px 0 rgba(10, 9, 9, 0.3);
+    /* margin: 100px auto; */
+}
+
+.login form {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+}
+.form-group {
     width: 100%;
-    padding: 2rem 4rem;
-    background: #8686864a;
-    font-size: 1.75rem;
-    letter-spacing: 0.125rem;
-    color: #fff;
-    border: none;
-    outline: none;
-    box-shadow: none;
-    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.3);
+    padding: 0 30px;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    text-align: left;
+    /* margin-bottom: 40px; */
 }

@@ -12,6 +12,8 @@ const io = require('socket.io')(server, {
 });
 
 database.conectarBD();
+database.run();
+
 //Definimos la carpeta de contenido estático
 app.use(session({
 	secret: 'mangoloco',

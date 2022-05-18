@@ -1,9 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const auth = require('../middleware/auth')
-
-
 const index_controller = require('../controllers/indexController')
+
 
 router.get("/", index_controller.loginWeb);
 
@@ -14,6 +13,8 @@ router.get("/admin", auth, function (req, res) {
 router.get('/estadisticas', auth, function (req, res) {
     res.render('estadisticas', {user: req.session.username, menuId: 'estadisticas'})
 })
+
+router.route("/preguntas").get(index_controller.getTemps);
 
 router.get('/logout', auth, function (req, res) {
     req.session.destroy();
