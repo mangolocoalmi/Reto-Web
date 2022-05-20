@@ -11,8 +11,7 @@ const io = require('socket.io')(server, {
     }
 });
 
-database.conectarBD();
-database.run();
+database.conectarBD()
 
 //Definimos la carpeta de contenido estático
 app.use(session({

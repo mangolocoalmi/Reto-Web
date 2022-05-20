@@ -1,4 +1,4 @@
-const { client } = require("../config/database");
+const sensor = require('../model/temperaturas');
 
 exports.registroWeb = async (req, res) => {
   res.render("registro", {
@@ -17,10 +17,10 @@ exports.loginWeb = async (req, res) => {
 };
 
 exports.getTemps = async (req, res) => {
-  // const db = database.main().catch(console.error)
-  console.log(client.db().collection('temperaturas').countDocuments());
-  // const findResult = client.find({}).toArray();
-  // console.log("Found documents =>", findResult);
+  const Result = await sensor.aggregate([{ $group : { _id: { $dateToString: { format: "%d/%m/%Y", date: "$fecha"} }, count: { $sum: 1 }, tempMax: { $max: "$temperatura" }, tempMin: { $min: "$temperatura" } }  }, { $sort: { temperatura: -1} } ])
+  res.render('estadisticas', {user: req.session.username, menuId: 'estadisticas', result: Result});
+  // console.log("Found documents =>", Result);
+
   // db.temperaturas.aggregate([{ 
   //   $match: {
   //     fecha: { 
