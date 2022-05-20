@@ -1,30 +1,24 @@
 .container {
     display: flex;
-    flex-flow: column;
+    margin-top: 30px;
+}
+
+.row {
+    display: flex;
     justify-content: space-around;
+    width: 100%;
 }
 
 #txt, #txt1 {
     padding: 10px;
     margin: auto;
 }
-#txt { background: #764AF1;}
+#txt, #txt1 { background: #ACACAC; }
 
-.te { background: #9772FB;}
-
-#txt1 { background: #247881; }
-
-.hu { background: #43919B; }
-
-#txt2 {
-    background: #b56b1c;
-}
-.ns {
-    background: #ec994b;
-}
+.te, .hu { background: #F7F7F7;}
 
 .caja { 
-    height: 220px;
     text-align: center;
-    border: 3px solid black;
+    height: 230px;
+    border: 3px solid #f6df3c;
 }

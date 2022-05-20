@@ -48,17 +48,17 @@ var opts_hum = {
   lineWidth: 0.44, // The line thickness
   pointer: {
     length: 0.62, // Relative to gauge radius
-    strokeWidth: 0.035 // The thickness
+    strokeWidth: 0.035, // The thickness
   },
   staticLabels: {
-    font: "10px sans-serif",  // Specifies font
-    labels: [0, 30, 50, 100],  // Print labels at these values
-    color: "#000000",  // Optional: Label text color
-    fractionDigits: 0  // Optional: Numerical precision. 0=round off.
+    font: "15px sans-serif", // Specifies font
+    labels: [0, 30, 50, 75, 100], // Print labels at these values
+    color: "#000000", // Optional: Label text color
+    fractionDigits: 0, // Optional: Numerical precision. 0=round off.
   },
-  colorStart: '#205375',   // Colors
-  colorStop: '#187498',    // just experiment with them
-  strokeColor: '#E8F9FD'   // to see which ones work best for you
+  colorStart: "#205375", // Colors
+  colorStop: "#187498", // just experiment with them
+  strokeColor: "#25d5ff", // to see which ones work best for you
 };
 
 var target = document.getElementById('temp');
