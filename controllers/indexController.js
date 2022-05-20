@@ -17,7 +17,7 @@ exports.loginWeb = async (req, res) => {
 };
 
 exports.getTemps = async (req, res) => {
-  const Result = await sensor.aggregate([{ $group : { _id: { $dateToString: { format: "%d/%m/%Y", date: "$fecha"} }, count: { $sum: 1 }, tempMax: { $max: "$temperatura" }, tempMin: { $min: "$temperatura" } }  }, { $sort: { temperatura: -1} } ])
+  const Result = await sensor.aggregate([{ $group : { _id: { $dateToString: { format: "%d/%m/%Y", date: "$fecha"} }, tempMax: { $max: "$temperatura" }, tempMin: { $min: "$temperatura" } }  }, { $sort: { temperatura: -1} } ])
   res.render('estadisticas', {user: req.session.username, menuId: 'estadisticas', result: Result});
   // console.log("Found documents =>", Result);
 

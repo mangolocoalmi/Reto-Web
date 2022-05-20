@@ -10,10 +10,7 @@ router.get('/registro', auth, index_controller.registroWeb)
 router.get("/admin", auth, function (req, res) {
     res.render("dashboard", { user: req.session.username, menuId: "admin" });
 });
-router.route("/estadisticas").get(index_controller.getTemps);
-// router.get('/estadisticas', auth, function (req, res) {
-//     res.render('estadisticas', {user: req.session.username, menuId: 'estadisticas'})
-// })
+router.get("/estadisticas", auth, index_controller.getTemps);
 
 router.get('/logout', auth, function (req, res) {
     req.session.destroy();

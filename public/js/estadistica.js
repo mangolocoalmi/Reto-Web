@@ -1,18 +1,30 @@
 
 const grafica = document.querySelector("#grafica");
-const etiquetas = ["01/05/2022", "02/05/2022", "03/05/2022", "04/05/2022","05/05/2022","06/05/2022","07/05/2022"];
+const arrFecha = [];
+const arrTempMx = [];
+const arrTempMn = [];
+
+temps.forEach(element => { 
+  arrFecha.push(element._id);
+  arrTempMx.push(element.tempMax);
+  arrTempMn.push(element.tempMin);
+});
+
+console.log(arrFecha);
+console.log(arrTempMx);
+console.log(arrTempMn);
 
 const tempMax = {
-  label: "Temperatura Max",
-  data: [24, 35, 24, 35, 24, 35, 30], 
+  label: "Temperatura Maxima",
+  data: arrTempMx,
   backgroundColor: 'rgba(54, 162, 235, 0.2)', // Color de fondo
   borderColor: 'rgba(54, 162, 235, 1)', // Color del borde
   borderWidth: 1,// Ancho del borde
 };
 
 const tempMin = {
-  label: "Temperatura Min",
-  data: [14, 15, 20, 19, 12, 15, 20],
+  label: "Temperatura Minima",
+  data: arrTempMn,
   backgroundColor: "rgba(255, 159, 64, 0.2)", // Color de fondo
   borderColor: "rgba(255, 159, 64, 1)", // Color del borde
   borderWidth: 1, // Ancho del borde
@@ -21,7 +33,7 @@ const tempMin = {
 new Chart(grafica, {
   type: 'bar',// Tipo de gráfica
   data: {
-      labels: etiquetas,
+      labels: arrFecha,
       datasets: [
           tempMax,
           tempMin
