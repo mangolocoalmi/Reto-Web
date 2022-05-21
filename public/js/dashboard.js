@@ -1,8 +1,4 @@
-var socket = io("ws://192.168.4.18:3000", {
-  transports: ["websocket"],
-  reconnection: false,
-});
-//var socket = io("ws://192.168.1.60:3000", { transports: ["websocket"], reconnection: false,});
+var socket = io("ws://192.168.4.18:3000", { transports: ["websocket"], reconnection: false, });
 socket.on("connect", () => {
   console.log(socket.id);
 });

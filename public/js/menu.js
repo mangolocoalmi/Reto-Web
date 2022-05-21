@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $("#toggle").click(function () {
-    $(".menu").toggle();
+  $("#toggle").on("click", function() {
+    console.log(this);
   });
 });

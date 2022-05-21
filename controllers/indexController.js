@@ -17,25 +17,8 @@ exports.loginWeb = async (req, res) => {
 };
 
 exports.getTemps = async (req, res) => {
-  const Result = await sensor.aggregate([{ $group : { _id: { $dateToString: { format: "%d/%m/%Y", date: "$fecha"} }, tempMax: { $max: "$temperatura" }, tempMin: { $min: "$temperatura" } }  }, { $sort: { temperatura: -1} } ])
+  const Result = await sensor.aggregate([{ $group: { _id: { $dateToString: { format: "%d/%m/%Y", date: "$fecha" } }, tempMax: { $max: "$temperatura" }, tempMin: { $min: "$temperatura" }, }, }, { $sort: { _id: -1 } }, ]);
   res.render('estadisticas', {user: req.session.username, menuId: 'estadisticas', result: Result});
-  // console.log("Found documents =>", Result);
-
-  // db.temperaturas.aggregate([{ 
-  //   $match: {
-  //     fecha: { 
-  //       $gte: new Date(new Date() - 7 * 60 * 60 * 24 * 1000), $lt:new Date() 
-  //     } 
-  //   }
-  // }, { $group : { _id: { $dateToString: { format: "%d/%m/%Y", date: "$fecha"} }, count: { $sum: 1 }, tempMax: { $max: "$temperatura" }, tempMin: { $min: "$temperatura" } }  },
-  //  { $sort: { temperatura: -1} } 
-  //  ])
-  
-  
-  // db.temperaturas.aggregate([{ $group : { _id: { $dateToString: { format: "%d/%m/%Y", date: "$fecha"} }, count: { $sum: 1 }, tempMax: { $max: "$temperatura" }, tempMin: { $min: "$temperatura" } }  },
-  //  { $sort: { temperatura: -1} } 
-  //  ])
-  
 };
 
 
